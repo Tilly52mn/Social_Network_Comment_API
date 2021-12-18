@@ -22,28 +22,28 @@ const UserSchema = new Schema(
         ref: 'User'
       }
     ],
-    // thoughts: [
-    //     {
-    //       type: Schema.Types.ObjectId,
-    //       ref: 'Thought'
-    //     }
-    //   ]
+    thoughts: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Thought'
+        }
+      ]
   },
-  // {
-  //   toJSON: {
-  //     virtuals: true,
-  //     getters: true
-  //   },
-  // }
+  {
+    toJSON: {
+      virtuals: true,
+      getters: true
+    },
+  }
 );
 
 
-  // create the Pizza model using the PizzaSchema
+  // create the User model using the UserSchema
 const User = model('User', UserSchema);
 
 // get total count of comments and replies on retrieval
-// UserSchema.virtual('friendCount').get(function() {
-//   return this.friends.length;
-// });
-// export the Pizza model
+UserSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
+// export the User model
 module.exports = User;

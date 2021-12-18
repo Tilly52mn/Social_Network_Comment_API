@@ -63,6 +63,6 @@ const ReactionSchema = new Schema(
     return this.reactions.length;
   });
 
-const Thought = model('thought', ThoughtSchema);
+const Thought = model('Thought', ThoughtSchema);
 
 module.exports = Thought;

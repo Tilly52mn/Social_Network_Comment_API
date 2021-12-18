@@ -16,25 +16,25 @@ const UserSchema = new Schema(
       default: Date.now,
       get: (createdAtVal) => dateFormat(createdAtVal)
     },
-    friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-      }
-    ],
-    thoughts: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: 'Thought'
-        }
-      ]
+    // friends: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User'
+    //   }
+    // ],
+    // thoughts: [
+    //     {
+    //       type: Schema.Types.ObjectId,
+    //       ref: 'Thought'
+    //     }
+    //   ]
   },
-  {
-    toJSON: {
-      virtuals: true,
-      getters: true
-    },
-  }
+  // {
+  //   toJSON: {
+  //     virtuals: true,
+  //     getters: true
+  //   },
+  // }
 );
 
 
@@ -42,8 +42,8 @@ const UserSchema = new Schema(
 const User = model('User', UserSchema);
 
 // get total count of comments and replies on retrieval
-UserSchema.virtual('friendCount').get(function() {
-  return this.friends.length;
-});
+// UserSchema.virtual('friendCount').get(function() {
+//   return this.friends.length;
+// });
 // export the Pizza model
 module.exports = User;

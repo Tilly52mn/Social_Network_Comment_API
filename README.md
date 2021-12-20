@@ -10,7 +10,10 @@
 [Questions](#Questions)<br/>
 
 ## Description
-An API that allows users, thougths, reactions, and Friends 
+An API that allows users, thougths, reactions, and Friends.
+See below for a walkthrough of the application!<br/>
+[walkthrough](https://watch.screencastify.com/v/Yysq23wREkBdQzi1a7Ux)
+
 
 ## Installation
 mongoose, express

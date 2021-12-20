@@ -69,6 +69,7 @@ const thoughtController = {
       });
   },
   getThoughtById({ params }, res) {
+    console.log(params)
     Thought.findOne({ _id: params.thoughtId })
       .then(dbUserData => {
         if (!dbUserData) {
@@ -107,20 +108,6 @@ const thoughtController = {
         res.status(400).json(err)
       });
   },
-  getThoughtById({ params }, res) {
-    Thought.findOne({ _id: params.id })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id!' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  }
 
 };
 
